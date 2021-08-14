@@ -1,0 +1,17 @@
+.weather-container {
+    height: 400px;
+    display: grid;
+    text-align: center;
+    color: white;
+  }
+  .weather-box {
+        margin: 15px;
+        width: 300px;
+        h1 {
+          color: gray;
+          font-size: 15px;
+        }
+        p {
+            font-size: 100px;
+        }
+      }
