@@ -1,17 +1,28 @@
 .weather-container {
-    height: 400px;
-    display: grid;
-    text-align: center;
-    color: white;
-  }
+  height: 400px;
+  display: flex;
+  text-align: center;
+  color: white;
+  flex-wrap: wrap;
   .weather-box {
-        margin: 15px;
-        width: 300px;
-        h1 {
-          color: gray;
-          font-size: 15px;
-        }
-        p {
-            font-size: 100px;
-        }
-      }
+    margin: 15px;
+    width: 300px;;
+    background-color: white;
+border-radius: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+ box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    h1 {
+      color: gray;
+      font-size: 15px;
+    }
+    p {
+      font-size: 12px;
+      color:black;
+      font-weight: bolder;
+      
+    }
+  }
+}

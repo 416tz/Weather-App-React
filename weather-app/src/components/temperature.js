@@ -1,9 +1,15 @@
-function Temperature () {
+import { useEffect } from "react";
+
+function Temperature ({current}) {
+    useEffect()
     return (
-        <div class = "temperature-container">
-            <h3> 25°</h3>
-            <h4>Stormy</h4>
-        </div>
+        <>
+        {current != {}&& 
+            <div class = "temperature-container">
+            <h3> {current.temp_c +"°"}</h3>
+            <h4>{current.condition.text}</h4>
+        </div>}
+        </>
     );
 }
 export default Temperature;
