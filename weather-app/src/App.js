@@ -4,8 +4,21 @@ import "./styles/main.scss";
 import Header from "./components/header";
 import Temperature from "./components/temperature";
 import Weather from "./components/weather";
-import Footer from "./components/footer";
 function App() {
+  const months = [
+    "JAN",
+    "FEB",
+    "MAR",
+    "APR",
+    "MAY",
+    "JUN",
+    "JUL",
+    "AUG",
+    "SEP",
+    "OCT",
+    "NOV",
+    "DEC",
+  ];
   const [current, setCurr] = useState({condition:{text:"loading..."}});
   const [location, setLocation] = useState({});
   const [input, setInput] = useState ("Paris");
@@ -23,6 +36,11 @@ function App() {
             alert("WRONG LOCATION")
           }
           else{
+            let d= data.location.localtime;
+            let  time = d.split('-');
+            let month = time[1]
+            time[1] = months[parseInt(month)-1];
+            data.location.localtime=time.toString();
             setCurr(data["current"]);
             setLocation(data["location"]);
           }
@@ -39,12 +57,12 @@ function Input () {
 }
   return (
     <>
+    <div class = "searchbar">
       <input id = "input" type="text" /> <button onClick={Input}> Submit</button> 
-
+      </div>
       <Header location={location} />
       <Temperature current={current} />
       <Weather current={current} />
-      <Footer />
     </>
   );
 }

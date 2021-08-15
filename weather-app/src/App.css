@@ -13,14 +13,22 @@ body {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
+  .searchbar {
+    width: 100%;
+    display: flex;
+   justify-content: center;
+  }
   input {
     border-radius: 40px;
     padding: 5px;
     margin: 10px;
+    background-color: transparent;
   }
   button {
+    height: auto;
     background-color: white;
     border-radius: 40px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  padding: 5px;
+  padding: 0 10px ;
+  border: none;
   }
