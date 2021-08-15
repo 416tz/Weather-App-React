@@ -10,7 +10,7 @@ function App() {
   const [location, setLocation] = useState({});
   const [input, setInput] = useState ("Paris");
   useEffect(() => {
-    fetch("http://api.weatherapi.com/v1/current.json?q=" + input, {
+    fetch("https://api.weatherapi.com/v1/current.json?q=" + input, {
       method: "GET",
       headers: {
         key: "1a4243cb7496444fbe5223908211308",
