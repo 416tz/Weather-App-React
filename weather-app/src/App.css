@@ -7,8 +7,15 @@ body {
     -moz-osx-font-smoothing: grayscale;
   }
   html {
-    background-color: rgb(241, 241, 241);
-  }
+    background-image: url(./images/cold-bg.jpeg);
+    height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+  
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;

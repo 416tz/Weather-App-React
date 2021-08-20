@@ -1,4 +1,4 @@
-function Weather({current}) {
+function Weather({ current }) {
   return (
     <div class="weather-container">
       <div class="weather-box">
@@ -13,7 +13,7 @@ function Weather({current}) {
         <h1> Temperature </h1>
         <p>{current.temp_c + "°"}</p>
       </div>
-      <div class="weather-box" >
+      <div class="weather-box">
         <h1> Humidity</h1>
         <p>{current.humidity + "%"} </p>
       </div>

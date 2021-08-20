@@ -19,28 +19,28 @@ function App() {
     "NOV",
     "DEC",
   ];
-  const [current, setCurr] = useState({condition:{text:"loading..."}});
+  const [current, setCurr] = useState({ condition: { text: "loading..." } });
   const [location, setLocation] = useState({});
-  const [input, setInput] = useState ("Paris");
+  const [input, setInput] = useState("Toronto");
+
   useEffect(() => {
     fetch("https://api.weatherapi.com/v1/current.json?q=" + input, {
       method: "GET",
       headers: {
-        key: "1a4243cb7496444fbe5223908211308",
+        key: "c22cb4a0cbba4e08a43185459212008",
       },
     })
       .then((response) => {
         response.json().then((data) => {
           console.log(data);
           if (data.error != undefined) {
-            alert("WRONG LOCATION")
-          }
-          else{
-            let d= data.location.localtime;
-            let  time = d.split('-');
-            let month = time[1]
-            time[1] = months[parseInt(month)-1];
-            data.location.localtime=time.toString();
+            alert("WRONG LOCATION");
+          } else {
+            let d = data.location.localtime;
+            let time = d.split("-");
+            let month = time[1];
+            time[1] = months[parseInt(month) - 1];
+            data.location.localtime = time.toString();
             setCurr(data["current"]);
             setLocation(data["location"]);
           }
@@ -50,15 +50,16 @@ function App() {
         console.log(err);
       });
   }, [input]);
-function Input () {
-  let d = document.getElementById("input").value;
-  console.log(d);
-  setInput(d);
-}
+  function Input() {
+    let d = document.getElementById("input").value;
+    console.log(d);
+    setInput(d);
+  }
   return (
     <>
-    <div class = "searchbar">
-      <input id = "input" type="text" /> <button onClick={Input}> Submit</button> 
+      <div class="searchbar">
+        <input id="input" type="text" placeholder="Search..." />{" "}
+        <button onClick={Input}> Submit</button>
       </div>
       <Header location={location} />
       <Temperature current={current} />
